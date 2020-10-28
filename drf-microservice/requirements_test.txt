@@ -13,3 +13,5 @@ pytest-pep8>=1.0.6
 pytest-cov
 coverage>=4.5.3
 pycodestyle
+
+ddt==1.4.1

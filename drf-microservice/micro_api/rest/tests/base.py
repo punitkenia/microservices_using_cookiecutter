@@ -2,8 +2,9 @@ import base64
 
 from django.contrib.auth.models import User
 from django.test import TestCase
-from rest_framework.test import APIClient
+from rest_framework.test import APIClient, APITestCase
 
+from micro_api.rest.models import RouterDetails
 
 class BaseTestCase(TestCase):
     """A base test case."""
@@ -62,3 +63,16 @@ class BaseTestCase(TestCase):
             format=format,
             data=data
         )
+
+
+class APITestCaseSetup(APITestCase):
+    def setUp(self):
+        self.username = "sach"
+        self.email = "sach@local.com"
+        self.password = "123456"
+        self.user = User.objects.create_user(self.username, self.email, self.password)
+
+        self.client.credentials(HTTP_AUTHORIZATION='Token {}'.format(self.user.auth_token))
+
+        self.router_details = RouterDetails.objects.create(sapid='110011', hostname='110011',
+                                                           loopback='127.127.127.127', mac_address='110011')
