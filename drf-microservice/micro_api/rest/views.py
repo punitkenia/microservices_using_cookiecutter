@@ -2,11 +2,12 @@ import json
 
 from django.conf import settings
 from django.http import JsonResponse, Http404
+from django.shortcuts import get_object_or_404
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from rest_framework import viewsets
 from docs.version import __version__
 from micro_api.rest.serializers import FileToFilesystemSerializer, RouterSerializer
 from micro_api.rest.models import RouterDetails
@@ -101,14 +102,24 @@ class FileAPI(APIView):
     #     raise NotImplemented()
 
 
-class RouterDetailList(APIView):
+class RouterViewSet(viewsets.ViewSet):
 
-    def get(self, request, format=None):
-        data = RouterDetails.objects.filter(status=True)
-        serializer_class = RouterSerializer(data, many=True)
+    def get_queryset(self):
+        queryset = RouterDetails.objects.filter(is_deleted=False)
+        return queryset
+
+    def list(self, request):
+        queryset = self.get_queryset()
+        serializer_class = RouterSerializer(queryset, many=True)
         return Response(serializer_class.data)
 
-    def post(self, request, format=None):
+    def retrieve(self, request, pk=None):
+        queryset = self.get_queryset()
+        router = get_object_or_404(queryset, pk=pk)
+        serializer_class = RouterSerializer(router)
+        return Response(serializer_class.data)
+
+    def create(self, request):
         data = request.data
         serializer_class = RouterSerializer(data=data)
         if serializer_class.is_valid():
@@ -116,30 +127,19 @@ class RouterDetailList(APIView):
             return Response(serializer_class.data, status=status.HTTP_201_CREATED)
         return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class RouterData(APIView):
+    def update(self, request, pk=None):
+        data = request.data
+        queryset = self.get_queryset()
+        router = get_object_or_404(queryset, pk=pk)
+        serializer_class = RouterSerializer(router, data=data)
+        if serializer_class.is_valid():
+            serializer_class.save()
+            return Response(serializer_class.data)
+        return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def get_object(self, id):
-        try:
-            router = RouterDetails.objects.get(id=id, status=True)
-            return router
-        except:
-            raise Http404
-
-    def get(self, request, pk, format=None):
-        router = self.get_object(pk)
-        serializer = RouterSerializer(router)
-        return Response(serializer.data)
-
-    def put(self, request, pk, format=None):
-        router = self.get_object(pk)
-        serializer = RouterSerializer(router, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk, format=None):
-        router = self.get_object(pk)
-        router.status = False
+    def destroy(self, request, pk=None):
+        queryset = self.get_queryset()
+        router = get_object_or_404(queryset, pk=pk)
+        router.is_deleted = True
         router.save()
         return Response(status=status.HTTP_204_NO_CONTENT)

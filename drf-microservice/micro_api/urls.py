@@ -21,7 +21,11 @@ from django.contrib import admin
 from django.views import defaults
 from rest_framework.authtoken import views as rest_framework_views
 from rest_framework.documentation import include_docs_urls
-from micro_api.rest.views import status_api, Icinga2API, FileAPI, RouterDetailList, RouterData
+from rest_framework.routers import DefaultRouter
+from micro_api.rest.views import status_api, Icinga2API, FileAPI, RouterViewSet
+
+router = DefaultRouter()
+router.register('router', RouterViewSet, basename='RouterClass')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -43,8 +47,7 @@ urlpatterns = [
     # Some media files if you need it else remove it
 
     # demo rest api
-    path('routers/', RouterDetailList.as_view(), name='router_list'),
-    path('router/<int:pk>/', RouterData.as_view(), name='router_detail'),
+    path('microapi/v1/', include(router.urls)),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

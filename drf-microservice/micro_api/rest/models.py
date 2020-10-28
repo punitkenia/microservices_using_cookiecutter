@@ -14,7 +14,7 @@ class RouterDetails(models.Model):
     hostname = models.CharField(max_length=100, null=False, blank=False)
     loopback = models.CharField(max_length=100, null=False)
     mac_address = models.CharField(max_length=100, null=False, blank=False)
-    status = models.BooleanField(default=True)
+    is_deleted = models.BooleanField(default=False)
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_auth_token(sender, instance=None, created=False, **kwargs):
