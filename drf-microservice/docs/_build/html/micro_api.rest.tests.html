@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>micro_api.rest.tests package &#8212; DjangoRestFramework Microservice 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments_pytest.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="micro-api-rest-tests-package">
+<h1>micro_api.rest.tests package<a class="headerlink" href="#micro-api-rest-tests-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-micro_api.rest.tests.base">
+<span id="micro-api-rest-tests-base-module"></span><h2>micro_api.rest.tests.base module<a class="headerlink" href="#module-micro_api.rest.tests.base" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="micro_api.rest.tests.base.APITestCaseSetup">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.tests.base.</code><code class="sig-name descname">APITestCaseSetup</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#APITestCaseSetup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.APITestCaseSetup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.test.APITestCase</span></code></p>
+<dl class="method">
+<dt id="micro_api.rest.tests.base.APITestCaseSetup.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#APITestCaseSetup.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.APITestCaseSetup.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="micro_api.rest.tests.base.BaseTestCase">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.tests.base.</code><code class="sig-name descname">BaseTestCase</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#BaseTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.BaseTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.test.testcases.TestCase</span></code></p>
+<p>A base test case.</p>
+<dl class="method">
+<dt id="micro_api.rest.tests.base.BaseTestCase.basics_auth_get">
+<code class="sig-name descname">basics_auth_get</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">username</em>, <em class="sig-param">password</em>, <em class="sig-param">data=None</em>, <em class="sig-param">content_type='application/json'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#BaseTestCase.basics_auth_get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.BaseTestCase.basics_auth_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.base.BaseTestCase.basics_auth_post">
+<code class="sig-name descname">basics_auth_post</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">username</em>, <em class="sig-param">password</em>, <em class="sig-param">data</em>, <em class="sig-param">format='json'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#BaseTestCase.basics_auth_post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.BaseTestCase.basics_auth_post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.base.BaseTestCase.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#BaseTestCase.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.BaseTestCase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for setting up the test fixture before exercising it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.base.BaseTestCase.tearDown">
+<code class="sig-name descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#BaseTestCase.tearDown"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.BaseTestCase.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Hook method for deconstructing the test fixture after testing it.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.base.BaseTestCase.token_auth_get">
+<code class="sig-name descname">token_auth_get</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">token</em>, <em class="sig-param">data=None</em>, <em class="sig-param">content_type='application/json'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#BaseTestCase.token_auth_get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.BaseTestCase.token_auth_get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.base.BaseTestCase.token_auth_post">
+<code class="sig-name descname">token_auth_post</code><span class="sig-paren">(</span><em class="sig-param">url</em>, <em class="sig-param">token</em>, <em class="sig-param">data</em>, <em class="sig-param">format='json'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/base.html#BaseTestCase.token_auth_post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.base.BaseTestCase.token_auth_post" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-micro_api.rest.tests.test_basic">
+<span id="micro-api-rest-tests-test-basic-module"></span><h2>micro_api.rest.tests.test_basic module<a class="headerlink" href="#module-micro_api.rest.tests.test_basic" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="micro_api.rest.tests.test_basic.BasicTestCase">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.tests.test_basic.</code><code class="sig-name descname">BasicTestCase</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_basic.html#BasicTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_basic.BasicTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#micro_api.rest.tests.base.BaseTestCase" title="micro_api.rest.tests.base.BaseTestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">micro_api.rest.tests.base.BaseTestCase</span></code></a></p>
+<dl class="method">
+<dt id="micro_api.rest.tests.test_basic.BasicTestCase.test_access_with_false_credential">
+<code class="sig-name descname">test_access_with_false_credential</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_basic.html#BasicTestCase.test_access_with_false_credential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_basic.BasicTestCase.test_access_with_false_credential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_basic.BasicTestCase.test_access_with_false_token">
+<code class="sig-name descname">test_access_with_false_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_basic.html#BasicTestCase.test_access_with_false_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_basic.BasicTestCase.test_access_with_false_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_basic.BasicTestCase.test_authorization_is_enforced">
+<code class="sig-name descname">test_authorization_is_enforced</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_basic.html#BasicTestCase.test_authorization_is_enforced"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_basic.BasicTestCase.test_authorization_is_enforced" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test that the api has user authorization.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-micro_api.rest.tests.test_project">
+<span id="micro-api-rest-tests-test-project-module"></span><h2>micro_api.rest.tests.test_project module<a class="headerlink" href="#module-micro_api.rest.tests.test_project" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.tests.test_project.</code><code class="sig-name descname">ViewTestCase</code><span class="sig-paren">(</span><em class="sig-param">methodName='runTest'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#micro_api.rest.tests.base.BaseTestCase" title="micro_api.rest.tests.base.BaseTestCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">micro_api.rest.tests.base.BaseTestCase</span></code></a></p>
+<p>Test suite for the api views.
+Infos: Lot of help at
+<a class="reference external" href="https://www.django-rest-framework.org/api-guide/testing/#apiclient">https://www.django-rest-framework.org/api-guide/testing/#apiclient</a></p>
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.setUp">
+<code class="sig-name descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.setUp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.setUp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define the test client and other test variables.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_access_with_correct_credential">
+<code class="sig-name descname">test_access_with_correct_credential</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_access_with_correct_credential"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_access_with_correct_credential" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_access_with_correct_token">
+<code class="sig-name descname">test_access_with_correct_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_access_with_correct_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_access_with_correct_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_credential_good_key">
+<code class="sig-name descname">test_api_file_with_credential_good_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_api_file_with_credential_good_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_credential_good_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_credential_wrong_key">
+<code class="sig-name descname">test_api_file_with_credential_wrong_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_api_file_with_credential_wrong_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_credential_wrong_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_token_good_key">
+<code class="sig-name descname">test_api_file_with_token_good_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_api_file_with_token_good_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_token_good_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_token_good_key_bad_param">
+<code class="sig-name descname">test_api_file_with_token_good_key_bad_param</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_api_file_with_token_good_key_bad_param"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_token_good_key_bad_param" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_token_wrong_key">
+<code class="sig-name descname">test_api_file_with_token_wrong_key</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_api_file_with_token_wrong_key"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_api_file_with_token_wrong_key" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_docs">
+<code class="sig-name descname">test_docs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_docs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_docs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_icinga">
+<code class="sig-name descname">test_icinga</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_icinga"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_icinga" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.tests.test_project.ViewTestCase.test_icinga2">
+<code class="sig-name descname">test_icinga2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/tests/test_project.html#ViewTestCase.test_icinga2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.tests.test_project.ViewTestCase.test_icinga2" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="micro-api-rest-tests-test-views-module">
+<h2>micro_api.rest.tests.test_views module<a class="headerlink" href="#micro-api-rest-tests-test-views-module" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-micro_api.rest.tests">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-micro_api.rest.tests" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">DjangoRestFramework Microservice</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functionalities.html">Functionalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devops_tools.html">DevOps tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interact_with_api.html">Interact with the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_check.html">Security check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Build and run the image with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">If you Use Aws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases_notes.html">Releases Notes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Alain Ivars.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/micro_api.rest.tests.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

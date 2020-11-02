@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>micro_api.rest package &#8212; DjangoRestFramework Microservice 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments_pytest.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="micro-api-rest-package">
+<h1>micro_api.rest package<a class="headerlink" href="#micro-api-rest-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="micro_api.rest.migrations.html">micro_api.rest.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.migrations.html#module-micro_api.rest.migrations.0001_initial">micro_api.rest.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.migrations.html#module-micro_api.rest.migrations.0002_auto_20201027_1225">micro_api.rest.migrations.0002_auto_20201027_1225 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.migrations.html#module-micro_api.rest.migrations.0003_auto_20201027_1812">micro_api.rest.migrations.0003_auto_20201027_1812 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.migrations.html#module-micro_api.rest.migrations">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="micro_api.rest.tests.html">micro_api.rest.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.tests.html#module-micro_api.rest.tests.base">micro_api.rest.tests.base module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.tests.html#module-micro_api.rest.tests.test_basic">micro_api.rest.tests.test_basic module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.tests.html#module-micro_api.rest.tests.test_project">micro_api.rest.tests.test_project module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.tests.html#micro-api-rest-tests-test-views-module">micro_api.rest.tests.test_views module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="micro_api.rest.tests.html#module-micro_api.rest.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-micro_api.rest.models">
+<span id="micro-api-rest-models-module"></span><h2>micro_api.rest.models module<a class="headerlink" href="#module-micro_api.rest.models" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="micro_api.rest.models.RouterDetails">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.models.</code><code class="sig-name descname">RouterDetails</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">sapid</em>, <em class="sig-param">hostname</em>, <em class="sig-param">loopback</em>, <em class="sig-param">mac_address</em>, <em class="sig-param">is_deleted</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/models.html#RouterDetails"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.models.RouterDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<dl class="exception">
+<dt id="micro_api.rest.models.RouterDetails.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="micro_api.rest.models.RouterDetails.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.models.RouterDetails.hostname">
+<code class="sig-name descname">hostname</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.hostname" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.models.RouterDetails.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.models.RouterDetails.is_deleted">
+<code class="sig-name descname">is_deleted</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.is_deleted" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.models.RouterDetails.loopback">
+<code class="sig-name descname">loopback</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.loopback" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.models.RouterDetails.mac_address">
+<code class="sig-name descname">mac_address</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.mac_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.models.RouterDetails.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#micro_api.rest.models.RouterDetails.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.models.RouterDetails.sapid">
+<code class="sig-name descname">sapid</code><a class="headerlink" href="#micro_api.rest.models.RouterDetails.sapid" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="micro_api.rest.models.create_auth_token">
+<code class="sig-prename descclassname">micro_api.rest.models.</code><code class="sig-name descname">create_auth_token</code><span class="sig-paren">(</span><em class="sig-param">sender</em>, <em class="sig-param">instance=None</em>, <em class="sig-param">created=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/models.html#create_auth_token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.models.create_auth_token" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</div>
+<div class="section" id="module-micro_api.rest.serializers">
+<span id="micro-api-rest-serializers-module"></span><h2>micro_api.rest.serializers module<a class="headerlink" href="#module-micro_api.rest.serializers" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="micro_api.rest.serializers.FileToFilesystemSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.serializers.</code><code class="sig-name descname">FileToFilesystemSerializer</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#FileToFilesystemSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.FileToFilesystemSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.serializers.BaseSerializer</span></code></p>
+<dl class="method">
+<dt id="micro_api.rest.serializers.FileToFilesystemSerializer.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">validated_data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#FileToFilesystemSerializer.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.FileToFilesystemSerializer.create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.FileToFilesystemSerializer.path">
+<code class="sig-name descname">path</code><em class="property"> = None</em><a class="headerlink" href="#micro_api.rest.serializers.FileToFilesystemSerializer.path" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.serializers.FileToFilesystemSerializer.to_internal_value">
+<code class="sig-name descname">to_internal_value</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#FileToFilesystemSerializer.to_internal_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.FileToFilesystemSerializer.to_internal_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the <em>incoming</em> primitive data into a native value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.serializers.FileToFilesystemSerializer.to_representation">
+<code class="sig-name descname">to_representation</code><span class="sig-paren">(</span><em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#FileToFilesystemSerializer.to_representation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.FileToFilesystemSerializer.to_representation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform the <em>outgoing</em> native value into primitive data.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.serializers.FileToFilesystemSerializer.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">instance</em>, <em class="sig-param">validated_data</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#FileToFilesystemSerializer.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.FileToFilesystemSerializer.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="micro_api.rest.serializers.GroupSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.serializers.</code><code class="sig-name descname">GroupSerializer</code><span class="sig-paren">(</span><em class="sig-param">instance=None</em>, <em class="sig-param">data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#GroupSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.GroupSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.serializers.HyperlinkedModelSerializer</span></code></p>
+<dl class="class">
+<dt id="micro_api.rest.serializers.GroupSerializer.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="reference internal" href="_modules/micro_api/rest/serializers.html#GroupSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.GroupSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.GroupSerializer.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('url', 'name')</em><a class="headerlink" href="#micro_api.rest.serializers.GroupSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.GroupSerializer.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#micro_api.rest.serializers.GroupSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.models.Group</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="micro_api.rest.serializers.RouterSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.serializers.</code><code class="sig-name descname">RouterSerializer</code><span class="sig-paren">(</span><em class="sig-param">instance=None</em>, <em class="sig-param">data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#RouterSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.RouterSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.serializers.ModelSerializer</span></code></p>
+<dl class="class">
+<dt id="micro_api.rest.serializers.RouterSerializer.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="reference internal" href="_modules/micro_api/rest/serializers.html#RouterSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.RouterSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.RouterSerializer.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ['id', 'sapid', 'hostname', 'loopback', 'mac_address']</em><a class="headerlink" href="#micro_api.rest.serializers.RouterSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.RouterSerializer.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#micro_api.rest.serializers.RouterSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#micro_api.rest.models.RouterDetails" title="micro_api.rest.models.RouterDetails"><code class="xref py py-class docutils literal notranslate"><span class="pre">micro_api.rest.models.RouterDetails</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="micro_api.rest.serializers.UserSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.serializers.</code><code class="sig-name descname">UserSerializer</code><span class="sig-paren">(</span><em class="sig-param">instance=None</em>, <em class="sig-param">data=&lt;class 'rest_framework.fields.empty'&gt;</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/serializers.html#UserSerializer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.UserSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.serializers.HyperlinkedModelSerializer</span></code></p>
+<dl class="class">
+<dt id="micro_api.rest.serializers.UserSerializer.Meta">
+<em class="property">class </em><code class="sig-name descname">Meta</code><a class="reference internal" href="_modules/micro_api/rest/serializers.html#UserSerializer.Meta"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.serializers.UserSerializer.Meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.UserSerializer.Meta.fields">
+<code class="sig-name descname">fields</code><em class="property"> = ('url', 'username', 'email', 'groups')</em><a class="headerlink" href="#micro_api.rest.serializers.UserSerializer.Meta.fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.UserSerializer.Meta.model">
+<code class="sig-name descname">model</code><a class="headerlink" href="#micro_api.rest.serializers.UserSerializer.Meta.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">django.contrib.auth.models.User</span></code></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.serializers.UserSerializer.Meta.read_only_fields">
+<code class="sig-name descname">read_only_fields</code><em class="property"> = ('username',)</em><a class="headerlink" href="#micro_api.rest.serializers.UserSerializer.Meta.read_only_fields" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-micro_api.rest.views">
+<span id="micro-api-rest-views-module"></span><h2>micro_api.rest.views module<a class="headerlink" href="#module-micro_api.rest.views" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="micro_api.rest.views.FileAPI">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.views.</code><code class="sig-name descname">FileAPI</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#FileAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.FileAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.views.APIView</span></code></p>
+<p>Example API to push a json image on the server and get it by a key.</p>
+<dl class="method">
+<dt id="micro_api.rest.views.FileAPI.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#FileAPI.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.FileAPI.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required that the client is authenticated,
+This method load a file from the disk to the json send it in the
+response
+:param request: the key corresponding to that file.
+:return: the file in json Base64 format</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.views.FileAPI.post">
+<code class="sig-name descname">post</code><span class="sig-paren">(</span><em class="sig-param">request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#FileAPI.post"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.FileAPI.post" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required that the client is authenticated,
+This method load a file from the json and save it on the disk
+:param request: the file in json Base64 format
+:return: the key to get to that file after.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="micro_api.rest.views.Icinga2API">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.views.</code><code class="sig-name descname">Icinga2API</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#Icinga2API"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.Icinga2API" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.views.APIView</span></code></p>
+<p>For Icinga2 or Nagios. Class based.
+Return ‘status’: ‘OK’ and the current version running.</p>
+<dl class="method">
+<dt id="micro_api.rest.views.Icinga2API.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#Icinga2API.get"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.Icinga2API.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="micro_api.rest.views.RouterViewSet">
+<em class="property">class </em><code class="sig-prename descclassname">micro_api.rest.views.</code><code class="sig-name descname">RouterViewSet</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#RouterViewSet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.RouterViewSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">rest_framework.viewsets.ViewSet</span></code></p>
+<p>Sample API to retreive, update, add and delete router details.</p>
+<p>Makes use of rest_framework.viewsets.ViewSet to expose APIs.</p>
+<dl class="attribute">
+<dt id="micro_api.rest.views.RouterViewSet.basename">
+<code class="sig-name descname">basename</code><em class="property"> = None</em><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.basename" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.views.RouterViewSet.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param">request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#RouterViewSet.create"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required that the client is authenticated,
+This method adds new router data in database and sends JSON response.
+This method responds to POST requests
+:param request: the request from the client to add the details.
+:return: JSON response of the router data</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.views.RouterViewSet.description">
+<code class="sig-name descname">description</code><em class="property"> = None</em><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.views.RouterViewSet.destroy">
+<code class="sig-name descname">destroy</code><span class="sig-paren">(</span><em class="sig-param">request</em>, <em class="sig-param">pk=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#RouterViewSet.destroy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.destroy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required that the client is authenticated,
+This method marks router record as deleted and sends its status in response.
+This method responsds to DELETE requests.
+:param request: the request object the client.
+:param pk: the record id to delete
+:return: HTTP status message on record delete.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.views.RouterViewSet.detail">
+<code class="sig-name descname">detail</code><em class="property"> = None</em><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.detail" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.views.RouterViewSet.get_queryset">
+<code class="sig-name descname">get_queryset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#RouterViewSet.get_queryset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.get_queryset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.views.RouterViewSet.list">
+<code class="sig-name descname">list</code><span class="sig-paren">(</span><em class="sig-param">request</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#RouterViewSet.list"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required that the client is authenticated,
+This method lists all the router data and sends JSON response.
+This method responds to GET request.
+:param request: the request from the client to fetch all the details.
+:return: JSON response of the router data</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.views.RouterViewSet.name">
+<code class="sig-name descname">name</code><em class="property"> = None</em><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.views.RouterViewSet.retrieve">
+<code class="sig-name descname">retrieve</code><span class="sig-paren">(</span><em class="sig-param">request</em>, <em class="sig-param">pk=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#RouterViewSet.retrieve"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.retrieve" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required that the client is authenticated,
+This method fetches the router data and sends JSON response.
+This method responds to GET request.
+:param request: the request from the client to fetch the details.
+:param pk: the record id to retrieve
+:return: JSON response of the router data</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="micro_api.rest.views.RouterViewSet.suffix">
+<code class="sig-name descname">suffix</code><em class="property"> = None</em><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.suffix" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="micro_api.rest.views.RouterViewSet.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">request</em>, <em class="sig-param">pk=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#RouterViewSet.update"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.RouterViewSet.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required that the client is authenticated,
+This method updates router record and sends its status in response.
+This method responds to PUT request.
+:param request: the request from the client to update router data, contains router data.
+:param pk: the record id to update
+:return: HTTP status message on record update else sends error message.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="micro_api.rest.views.status_api">
+<code class="sig-prename descclassname">micro_api.rest.views.</code><code class="sig-name descname">status_api</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">request</em>, <em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/micro_api/rest/views.html#status_api"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#micro_api.rest.views.status_api" title="Permalink to this definition">¶</a></dt>
+<dd><p>For Icinga2 or Nagios. Function based.
+Return ‘status’: ‘OK’ and the current version running.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-micro_api.rest">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-micro_api.rest" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">DjangoRestFramework Microservice</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="functionalities.html">Functionalities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="devops_tools.html">DevOps tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interact_with_api.html">Interact with the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_check.html">Security check</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker.html">Build and run the image with Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aws.html">If you Use Aws</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releases_notes.html">Releases Notes</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Alain Ivars.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/micro_api.rest.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

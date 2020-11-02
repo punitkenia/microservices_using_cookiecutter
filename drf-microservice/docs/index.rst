@@ -77,7 +77,8 @@ Online source code available on `Github`_
    docker
    aws
 
-   releases_notes 
+   releases_notes
+   rest
 
 Indices and tables
 ------------------

@@ -12,10 +12,14 @@
 #
 import os
 import sys
+import django
 
 from utils2devops.tools.single_sourcing_package_version import get_version
 
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('..'))
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'micro_api.config.common'
+django.setup()
 
 version = get_version('.')
 
