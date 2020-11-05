@@ -2,34 +2,8 @@ import copy
 import json
 import uuid
 
-from django.contrib.auth.models import User, Group
+
 from rest_framework import serializers
-from rest_framework.authtoken.models import Token
-
-from .models import RouterDetails
-
-
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('url', 'username', 'email', 'groups')
-        read_only_fields = ('username', )
-
-    # def create(self, validated_data):
-    #     user = User(
-    #         email=validated_data['email'],
-    #         username=validated_data['username']
-    #     )
-    #     user.set_password(validated_data['password'])
-    #     user.save()
-    #     Token.objects.create(user=user)
-    #     return user
-
-
-class GroupSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Group
-        fields = ('url', 'name')
 
 
 # class FileSerialised:
@@ -74,8 +48,3 @@ class FileToFilesystemSerializer(serializers.BaseSerializer):
     def to_representation(self, obj):
         raise NotImplementedError('`to_representation()` must be implemented.')
         # return obj.data
-
-class RouterSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = RouterDetails
-        fields = ['id', 'sapid', 'hostname', 'loopback', 'mac_address']

@@ -3,14 +3,15 @@ import json
 from django.conf import settings
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
+from rest_framework.permissions import AllowAny
 from docs.version import __version__
-from micro_api.rest.serializers import FileToFilesystemSerializer, RouterSerializer
-from micro_api.rest.models import RouterDetails
+from micro_api.rest.serializers import FileToFilesystemSerializer
 
 
 """
@@ -100,89 +101,3 @@ class FileAPI(APIView):
     #     :return: the key to get to that file after.
     #     """
     #     raise NotImplemented()
-
-
-class RouterViewSet(viewsets.ViewSet):
-    """
-    Sample API to retreive, update, add and delete router details.
-
-    Makes use of rest_framework.viewsets.ViewSet to expose APIs.
-    """
-
-    def get_queryset(self):
-        queryset = RouterDetails.objects.filter(is_deleted=False)
-        return queryset
-
-    def list(self, request):
-        """
-        Required that the client is authenticated,
-        This method lists all the router data and sends JSON response.
-        This method responds to GET request.
-        :param request: the request from the client to fetch all the details.
-        :return: JSON response of the router data
-        """
-        queryset = self.get_queryset()
-        serializer_class = RouterSerializer(queryset, many=True)
-        return Response(serializer_class.data)
-
-    def retrieve(self, request, pk=None):
-        """
-        Required that the client is authenticated,
-        This method fetches the router data and sends JSON response.
-        This method responds to GET request.
-        :param request: the request from the client to fetch the details.
-        :param pk: the record id to retrieve
-        :return: JSON response of the router data
-        """
-        queryset = self.get_queryset()
-        router = get_object_or_404(queryset, pk=pk)
-        serializer_class = RouterSerializer(router)
-        return Response(serializer_class.data)
-
-    def create(self, request):
-        """
-        Required that the client is authenticated,
-        This method adds new router data in database and sends JSON response.
-        This method responds to POST requests
-        :param request: the request from the client to add the details.
-        :return: JSON response of the router data
-        """
-        data = request.data
-        serializer_class = RouterSerializer(data=data)
-        if serializer_class.is_valid():
-            serializer_class.save()
-            return Response(serializer_class.data, status=status.HTTP_201_CREATED)
-        return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def update(self, request, pk=None):
-        """
-        Required that the client is authenticated,
-        This method updates router record and sends its status in response.
-        This method responds to PUT request.
-        :param request: the request from the client to update router data, contains router data.
-        :param pk: the record id to update
-        :return: HTTP status message on record update else sends error message.
-        """
-        data = request.data
-        queryset = self.get_queryset()
-        router = get_object_or_404(queryset, pk=pk)
-        serializer_class = RouterSerializer(router, data=data)
-        if serializer_class.is_valid():
-            serializer_class.save()
-            return Response(serializer_class.data)
-        return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def destroy(self, request, pk=None):
-        """
-        Required that the client is authenticated,
-        This method marks router record as deleted and sends its status in response.
-        This method responsds to DELETE requests.
-        :param request: the request object the client.
-        :param pk: the record id to delete
-        :return: HTTP status message on record delete.
-        """
-        queryset = self.get_queryset()
-        router = get_object_or_404(queryset, pk=pk)
-        router.is_deleted = True
-        router.save()
-        return Response(status=status.HTTP_204_NO_CONTENT)

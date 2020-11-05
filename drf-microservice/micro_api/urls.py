@@ -21,17 +21,14 @@ from django.contrib import admin
 from django.views import defaults
 from rest_framework.authtoken import views as rest_framework_views
 from rest_framework.documentation import include_docs_urls
-from rest_framework.routers import DefaultRouter
-from micro_api.rest.views import status_api, Icinga2API, FileAPI, RouterViewSet
-
-router = DefaultRouter()
-router.register('router', RouterViewSet, basename='RouterClass')
+from micro_api.rest.views import status_api, Icinga2API, FileAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Authentication, Authorization, Users, Groups
     url(r'^api-auth/', include('rest_auth.urls')),
+    # url(r'^api-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^api-auth-token/$', rest_framework_views.obtain_auth_token,
         name='get_auth_token'),
 
@@ -46,8 +43,11 @@ urlpatterns = [
     path('api/v1/file', FileAPI.as_view(), name='api_file'),
     # Some media files if you need it else remove it
 
-    # demo rest api
-    path('microapi/v1/', include(router.urls)),
+    # router API demo
+    path('micro_api/v1/', include('micro_api.router.urls')),
+
+    # user management
+    path('micro_api/user/', include('micro_api.user_registration.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
