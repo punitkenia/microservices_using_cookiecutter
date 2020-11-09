@@ -11,12 +11,25 @@ router_list = RouterViewSet.as_view(
 router_detail = RouterViewSet.as_view(
     {
         'get': 'retrieve',
-        'post': 'update',
-        'delete': 'destroy',
      },
+)
+
+router_update = RouterViewSet.as_view(
+    {
+        'post': 'update',
+     },
+)
+
+
+router_delete = RouterViewSet.as_view(
+    {
+        'post': 'destroy',
+    }
 )
 
 urlpatterns = [
     path('routers/', router_list, name='router-list'),
-    path('router/<int:pk>/', router_detail, name='router-detail'),
+    path('get_router/<int:pk>/', router_detail, name='router-detail'),
+    path('update_router/', router_update, name='router-update'),
+    path('remove_router/', router_delete, name='remove-router'),
 ]

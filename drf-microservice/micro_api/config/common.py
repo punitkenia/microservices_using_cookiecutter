@@ -38,6 +38,8 @@ List of settings that the project as to have to be ready for production:
 
 import os
 import sys
+import json
+from django.core.exceptions import ImproperlyConfigured
 
 # import boto3 as boto3
 #
@@ -58,13 +60,24 @@ secrets = {}
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
+    val = secrets_file.read()
+    secrets = json.loads(val)
+
+def get_secret(setting, secrets=secrets):
+    """Get secret setting or fail with ImproperlyConfigured"""
+    try:
+        return secrets[setting]
+    except KeyError:
+        raise ImproperlyConfigured("Set the {} setting".format(setting))
+
 PATH_TO_STORE_FILE = os.environ.get(
     'PATH_TO_STORE_FILE', default=BASE_DIR + '/files/')
 os.makedirs(PATH_TO_STORE_FILE, exist_ok=True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = os.environ.get('SECRET_KEY')
-SECRET_KEY = 'so=@6uf8p*wo=5*-foze2_s&cd+))86me5pzpx8)#9!bgbgg@6'
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # or with a file
 # with open('/etc/secret_key.txt') as f:
@@ -120,13 +133,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django.contrib.sites',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
-
+    'account',
     'micro_api.rest',
+    'micro_api.router',
+    'micro_api.user_registration',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -138,6 +155,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Managing user passwords
+    "account.middleware.LocaleMiddleware",
+    "account.middleware.TimezoneMiddleware",
+    "account.middleware.ExpiredPasswordMiddleware",
 ]
 
 ROOT_URLCONF = 'micro_api.urls'
@@ -227,7 +248,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 # list: http://pytz.sourceforge.net/#what-is-utc
-TIME_ZONE = os.environ.get('TIME_ZONE', default='UTC')
+TIME_ZONE = get_secret('TIME_ZONE') # os.environ.get('TIME_ZONE', default='UTC')
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
