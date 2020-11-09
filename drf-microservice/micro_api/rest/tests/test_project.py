@@ -103,7 +103,7 @@ class ViewTestCase(BaseTestCase):
         self.assertEqual(response.data, json_file_content)
 
     def test_api_file_with_token_good_key_bad_param(self):
-        with open('./my_api/rest/tests/files/file_ok.json') as f:
+        with open('./micro_api/rest/tests/files/file_ok.json') as f:
             file_content = f.read()
             json_file_content = json.loads(file_content)
         response = self.token_auth_post(

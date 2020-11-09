@@ -1,5 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from .models import UserInfo
+
 
 class UserSerializer(serializers.Serializer):
     username = serializers.CharField(max_length=100, allow_null=False, allow_blank=False)
@@ -11,11 +13,13 @@ class UserSerializer(serializers.Serializer):
     def create(self, validated_data):
         password = validated_data.pop('password')
         user = User(
-            username = validated_data['username'],
-            email = validated_data['email']
+            username=validated_data['username'],
+            email=validated_data['email']
         )
         user.set_password(password)
         user.save()
+        user_info = UserInfo(user=user, email_verify=False)
+        user_info.save()
         return user
 
     def update(self, instance, validated_data):

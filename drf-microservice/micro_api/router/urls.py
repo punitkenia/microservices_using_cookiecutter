@@ -20,7 +20,6 @@ router_update = RouterViewSet.as_view(
      },
 )
 
-
 router_delete = RouterViewSet.as_view(
     {
         'post': 'destroy',

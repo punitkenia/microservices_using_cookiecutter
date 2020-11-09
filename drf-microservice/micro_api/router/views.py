@@ -33,7 +33,7 @@ class RouterViewSet(viewsets.ViewSet):
         return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def update(self, request):
-        data = request.data.dict()
+        data = request.data
         queryset = self.get_queryset()
         router = get_object_or_404(queryset, pk=data['id'])
         serializer_class = RouterSerializer(router, data=data)
@@ -43,7 +43,7 @@ class RouterViewSet(viewsets.ViewSet):
         return Response(serializer_class.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def destroy(self, request):
-        data = request.data.dict()
+        data = request.data
         queryset = self.get_queryset()
         router = get_object_or_404(queryset, pk=data['id'])
         router.is_deleted = True
