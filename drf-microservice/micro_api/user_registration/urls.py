@@ -47,4 +47,3 @@ urlpatterns = [
     path('delete_user/', user_delete, name='user-delete'),
     path('get_token/<int:pk>/', user_token, name='get-token'),
     path('reset_token/', user_token, name='reset-token'),
-]
