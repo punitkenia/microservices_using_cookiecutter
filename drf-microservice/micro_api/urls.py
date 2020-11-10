@@ -16,18 +16,24 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import url, include
 from django.conf.urls.static import static
-from django.urls import path
+from django.urls import path, re_path
 from django.contrib import admin
 from django.views import defaults
 from rest_framework.authtoken import views as rest_framework_views
 from rest_framework.documentation import include_docs_urls
 from micro_api.rest.views import status_api, Icinga2API, FileAPI
+from rest_auth.views import PasswordResetConfirmView
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Authentication, Authorization, Users, Groups
     url(r'^api-auth/', include('rest_auth.urls')),
+    
+    re_path('api-auth/password/reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
+    
     # url(r'^api-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^api-auth-token/$', rest_framework_views.obtain_auth_token,
         name='get_auth_token'),
@@ -48,6 +54,9 @@ urlpatterns = [
 
     # user management
     path('micro_api/user/', include('micro_api.user_registration.urls')),
+
+    # Celery Rabbitmq based bulk email api
+    path('api/', include('micro_api.bulk_email_api.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

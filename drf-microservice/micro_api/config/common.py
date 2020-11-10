@@ -137,10 +137,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
-    'account',
+    'simple_history',
     'micro_api.rest',
     'micro_api.router',
     'micro_api.user_registration',
+    # 'account'
+    'micro_api.bulk_email_api',
+    'django_celery_results'
 ]
 
 SITE_ID = 1
@@ -156,9 +159,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     # Managing user passwords
-    "account.middleware.LocaleMiddleware",
-    "account.middleware.TimezoneMiddleware",
-    "account.middleware.ExpiredPasswordMiddleware",
+    # "account.middleware.LocaleMiddleware",
+    # "account.middleware.TimezoneMiddleware",
+    # "account.middleware.ExpiredPasswordMiddleware",
 ]
 
 ROOT_URLCONF = 'micro_api.urls'
@@ -317,26 +320,47 @@ LOGGING = {
         'mail_admins': {
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler'
+        },
+        'file': { 
+            'level': 'INFO', 
+            'class': 'logging.FileHandler', 
+            'filename': 'micro_api.debug.log', 
+            'formatter': 'verbose' 
         }
     },
     'loggers': {
         'django': {
-            'handlers': ['console'],
+            'handlers': ['console', 'file'],
             'propagate': True,
         },
         'django.server': {
-            'handlers': ['django.server'],
+            'handlers': ['django.server', 'file'],
             'level': 'INFO',
             'propagate': False,
         },
         'django.request': {
-            'handlers': ['mail_admins', 'console'],
+            'handlers': ['mail_admins', 'console', 'file'],
             'level': 'ERROR',
             'propagate': False,
         },
         'django.db.backends': {
-            'handlers': ['console'],
+            'handlers': ['console', 'file'],
             'level': 'INFO'
         },
     }
 }
+
+# Celery config
+CELERY_BROKER_URL = 'pyamqp://'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'django-db'
+
+# Email config
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'test.email.for.cisco@gmail.com'
+EMAIL_HOST_PASSWORD = 'Cisco#1234'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False  

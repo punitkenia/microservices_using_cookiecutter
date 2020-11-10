@@ -57,7 +57,7 @@ class UserViewSet(viewsets.ViewSet):
         return Response(serializer_class.data)
 
     def update(self, request, format=None):
-        data = request.data.dict()
+        data = request.data
         queryset = self.get_queryset()
         user = get_object_or_404(queryset, pk=data['pk'])
 
@@ -82,7 +82,7 @@ class UserViewSet(viewsets.ViewSet):
 
     def destroy(self, request, format=None):
         queryset = self.get_queryset()
-        data = request.data.dict()
+        data = request.data
         user = get_object_or_404(queryset, pk=data['pk'])
         user.is_active = False
         user.save()
@@ -117,7 +117,7 @@ class UserToken(viewsets.ViewSet):
         return Response(serializer_class.data)
 
     def update(self, request, format=None):
-        data = request.data.dict()
+        data = request.data
         try:
             user = User.objects.get(username=data['username'],
                                     email=data['email'])
